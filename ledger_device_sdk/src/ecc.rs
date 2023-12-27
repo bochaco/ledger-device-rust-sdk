@@ -316,7 +316,7 @@ impl<const N: usize> ECPrivateKey<N, 'E'> {
 pub struct BLSPrivateKey {
     curve: CurvesId,
     keylength: usize,
-    key: [u8; 32],
+    pub key: [u8; 32],
 }
 
 #[repr(C)]
