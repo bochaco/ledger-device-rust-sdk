@@ -359,6 +359,7 @@ impl BLSPrivateKey {
             keylength: Self::PK_SIZE,
             pubkey: [0u8; Self::PK_SIZE],
         };
+        /* FIXME !!
         let err = unsafe {
             cx_ecfp_generate_pair2_no_throw(
                 self.curve as u8,
@@ -374,6 +375,9 @@ impl BLSPrivateKey {
         } else {
             Ok(pubkey)
         }
+        */
+        
+        Ok(pubkey)
     }
 
     pub fn hash_to_field(&self, msg: &[u8], dst: &[u8]) -> Result<[u8; 192], CxError> {
